@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>01_Servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+ <!--    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file> -->
+  </welcome-file-list>
+  
+  <servlet>
+  <servlet-name>TestServlet1</servlet-name>
+  <servlet-class>com.kh.servlet.TestServlet1</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>TestServlet1</servlet-name>
+  	<url-pattern>/testServlet1.do</url-pattern>
+  	
+  	<!-- 이 url을 처리하는 애가 <servlet>안에있는 태그들을 똑같은이름으로 처리해줘야한다 -->
+  	
+  	<!-- /testServlet1.do 이 url 이 클래스에 매핑됐으면 좋겠어!
+  	그러려면 아래의 이름들이 동일해야 연결 후 처리가 가능하다.
+  	
+  	<servlet>
+    <servlet-name>TestServlet1</servlet-name>
+  	
+  	<servlet-mapping>
+    <servlet-name>TestServlet1</servlet-name>
+  	
+  	연결까지 헀으니 실제로 처리할 클래스를 만들어줘야한다.. TestServlet1이라는 클래스를. (src에서만듦)
+  	  -->
+  </servlet-mapping>
+  
+  <!--1. 13-20까지가 한 쎄트이다.
+   13~20행이 뜻하는건 : 서블릿 매핑 (우리는 어노테이션을 더많이이용한다)
+     태그로 하는부분을 모르고 넘어갈 수는 없으니 web.xml로 태그로 설정하는 부분을 타이핑한것.-->
+  
+  <!-- 웹 컨텐트에 testServlet2를 만들었고, 그걸  매핑해주려면  web.xml로 와야한다. -->
+  
+  <servlet>
+  	<servlet-name>TestServlet2</servlet-name>
+  	<servlet-class>com.kh.servlet.TestServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestServlet2</servlet-name>
+  	<url-pattern>/testServlet2.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>TestServlet3</servlet-name>
+  	<servlet-class>com.kh.servlet.TestServlet3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestServlet3</servlet-name>
+  	<url-pattern>/testServlet3.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
